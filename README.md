@@ -1,5 +1,7 @@
 # actiqx
-To Run the app in lite server mode
+
 # grunt serve-lite 
-To run the app in Ionic Mode 
+To Run the app in lite server mode
+ 
 # grunt serve
+To run the app in Ionic Mode
