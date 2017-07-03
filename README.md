@@ -1,8 +1,8 @@
 # actiqx
 
-#Initialization
+# Initialization
 To inital setup the project run the below code to check the changes 
- - npm install
+ > npm install
 
 #  Run Lite server
 To Run the app in lite server mode
