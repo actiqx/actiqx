@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.dashboard')
+    .module('app.service')
     .service('dashboardService', dashboardService)
 
   dashboardService.$inject = ['$http', 'server', 'exception', 'logger'];

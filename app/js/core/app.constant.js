@@ -3,33 +3,13 @@
 
   angular
     .module('app')
+    .constant('server', {
+      host: 'http://localhost',
+      port:'2403',
+      dashboard:"/dashboard-details"
 
-    .constant('server',{
-        host: 'http://task-fwc01.rhcloud.com',
-        port:'80',
-        socket: {
-            host: "http://task-fwc01.rhcloud.com",
-            port: "8000"
-        },
-        message: {
-        host: "http://task-fwc01.rhcloud.com",
-        port: "80"
-        },
-        user: {
-        host: "http://task-fwc01.rhcloud.com",
-        port: "80"
-        },
-        task: {
-        host: "http://task-fwc01.rhcloud.com",
-        port: "80"
-        },
-        category: {
-        host: "http://task-fwc01.rhcloud.com",
-        port: "80"
-        }
+    })
 
-
-      })
     .constant('langMessage',{
       EnterFirstName:"Enter First Name",
       EnterLastName:"Enter Last Name",

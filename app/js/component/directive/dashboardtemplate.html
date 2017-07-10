@@ -1,0 +1,17 @@
+<div class="row" >
+  <div class="col m3 s4" ng-repeat="tile in item">
+    <div class="tile" ng-click="">
+      <div class="tile-layout" ng-style="{
+            'background-image': 'url('+ tile.TileBackground +')'
+
+          }">
+        <img src="" ng-src="{{tile.TileIconImage}}">
+      </div>
+      <div class="tile-text">
+    <span>{{tile.TileName}}</span>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+

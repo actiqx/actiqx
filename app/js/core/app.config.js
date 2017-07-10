@@ -5,7 +5,7 @@
         .module('app')
         .config(configApp)
 
-    configApp.$inject = ['$stateProvider', '$urlRouterProvider'];
+    configApp.$inject = ['$stateProvider', '$urlRouterProvider','$ionicConfigProvider'];
 
     function configApp($stateProvider,$urlRouterProvider) {
         $stateProvider
@@ -13,48 +13,35 @@
             .state('app', {
                 url: '/app',
                 abstract: true,
-                templateUrl: 'templates/menu.html',
-                controller: 'AppCtrl'
-            })
+                templateUrl: 'js/modules/layout/layout-temp.html',
+                controller: 'layoutCtrl as vm'
 
-            .state('app.search', {
-                url: '/search',
+            })
+            .state('app.dashboard', {
+                url: '/dashboard',
                 views: {
-                    'menuContent': {
-                        templateUrl: 'templates/search.html'
+                    'content': {
+                        templateUrl: 'js/modules/dashboard/dashboard.html',
+                        controller: 'dashboardCtrl as vm'
                     }
                 }
             })
-
-            .state('app.browse', {
-                url: '/browse',
+            .state('app.dashboard1', {
+                url: '/dashboard1',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/browse.html'
-                    }
-                }
-            })
-            .state('app.playlists', {
-                url: '/playlists',
-                views: {
-                    'menuContent': {
-                        templateUrl: 'templates/playlists.html',
-                        controller: 'PlaylistsCtrl'
-                    }
-                }
-            })
-
-            .state('app.single', {
-                url: '/playlists/:playlistId',
-                views: {
-                    'menuContent': {
-                        templateUrl: 'templates/playlist.html',
-                        controller: 'PlaylistCtrl'
+                        templateUrl: 'js/modules/dashboard/dashboard.html',
+                        controller: 'dashboardCtrl as vm'
                     }
                 }
             });
+
+
+
+
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/playlists');
+        $urlRouterProvider.otherwise('/app/dashboard');
+        $ionicConfigProvider.tabs.position("bottom");
     }
 
 }());

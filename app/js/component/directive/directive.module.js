@@ -2,8 +2,9 @@
     'use strict';
 
     angular
-        .module('app.layout', [
-'app.dashboard'
+        .module('app.directive', [
+
         ]);
 
 }());
+
