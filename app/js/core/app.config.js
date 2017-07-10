@@ -1,47 +1,93 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app')
-        .config(configApp)
+  angular
+    .module('app')
+    .config(configApp)
 
-    configApp.$inject = ['$stateProvider', '$urlRouterProvider','$ionicConfigProvider'];
+  configApp.$inject = ['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider'];
 
-    function configApp($stateProvider,$urlRouterProvider) {
-        $stateProvider
+  function configApp($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+    $stateProvider
 
-            .state('app', {
-                url: '/app',
-                abstract: true,
-                templateUrl: 'js/modules/layout/layout-temp.html',
-                controller: 'layoutCtrl as vm'
+      .state('app', {
+        url: '/app',
+        abstract: true,
+        templateUrl: 'js/modules/layout/layout-temp.html',
+        controller: 'layoutCtrl as vm'
 
-            })
-            .state('app.dashboard', {
-                url: '/dashboard',
-                views: {
-                    'content': {
-                        templateUrl: 'js/modules/dashboard/dashboard.html',
-                        controller: 'dashboardCtrl as vm'
-                    }
-                }
-            })
-            .state('app.dashboard1', {
-                url: '/dashboard1',
-                views: {
-                    'menuContent': {
-                        templateUrl: 'js/modules/dashboard/dashboard.html',
-                        controller: 'dashboardCtrl as vm'
-                    }
-                }
-            });
+      })
+      .state('app.dashboard', {
+        url: '/dashboard',
+        views: {
+          'tab-home': {
+            templateUrl: 'js/modules/dashboard/dashboard.html',
+            controller: 'dashboardCtrl as vm'
+          }
+        }
+      })
+      .state('app.search', {
+        url: '/search',
+        views: {
+          'tab-search': {
+            templateUrl: 'js/modules/search/search.html'
+
+          }
+        }
+      })
+      .state('app.posttask', {
+        url: '/posttask',
+        views: {
+          'tab-posttask': {
+            templateUrl: 'js/modules/posttask/posttask.html'
+
+          }
+        }
+      })
+      .state('app.chat', {
+        url: '/chat',
+        views: {
+          'tab-chat': {
+            templateUrl: 'js/modules/chat/chat.html'
+
+          }
+        }
+      })
+      .state('app.help', {
+        url: '/help',
+        views: {
+          'tab-home': {
+            templateUrl: 'js/modules/help/help.html'
+
+          }
+        }
+      })
+      .state('app.payment', {
+        url: '/payment',
+        views: {
+          'tab-home': {
+            templateUrl: 'js/modules/payment/payment.html'
+
+          }
+        }
+      })
+      .state('app.password', {
+        url: '/login',
+        views: {
+          'tab-home': {
+            templateUrl: 'js/modules/login/login.html'
+
+          }
+        }
+      })
+      ;
 
 
 
 
-        // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/dashboard');
-        $ionicConfigProvider.tabs.position("bottom");
-    }
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/app/dashboard');
+    $ionicConfigProvider.tabs.position("bottom");
+  }
 
 }());
