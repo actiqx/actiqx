@@ -1,4 +1,44 @@
 <ion-view view-title="Dashboard">
   <ion-content>
-PostTAsk
+<div class="row posttask">
+
+        <form class="col s12">
+      
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="task_title" type="text" class="validate" ng-model="vm.categories">
+          <label for="task_title">Task Title</label>
+        </div>
+        </div>
+    
+     <div class="row">
+        <div class="input-field col s12">
+          <textarea id="taskdesc" class="materialize-textarea" ng-model="vm.postTaskInfo.info">{{vm.postTaskInfo.info}}</textarea>
+          <label for="taskdesc">Task Description</label>
+        </div>
+      </div>
+    
+    <div class="row">
+        <div class="input-field col s12">
+          <input vs-google-autocomplete
+                  ng-model="vm.locAddress.name"
+                  vs-place="vm.locAddress.place"
+                  vs-latitude="vm.locAddress.components.location.lat"
+                  vs-longitude="vm.locAddress.components.location.long"
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="form-control"
+                  placeholder="Enter address">
+          <label for="address">Address</label>
+        </div>
+    </div>
+
+
+ <div class="row">
+       <a class="waves-effect waves-light btn">Post Task</a>
+     </div>
+        </form>
+</div>
+
   </ion-content></ion-view>

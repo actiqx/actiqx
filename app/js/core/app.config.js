@@ -39,7 +39,8 @@
         url: '/posttask',
         views: {
           'tab-posttask': {
-            templateUrl: 'js/modules/posttask/posttask.html'
+            templateUrl: 'js/modules/posttask/posttask.html',
+            controller: 'posttaskController as vm'
 
           }
         }
