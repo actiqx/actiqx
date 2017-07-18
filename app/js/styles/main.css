@@ -1,1 +1,14 @@
 /* Your application styles go here */
+.bar-app .title {
+    color: #fff !important;
+}
+.bar-app {
+    border-color: #b2b2b2;
+    background-color: #E91E63 !important;
+    background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
+    color: #fff;
+}
+  .tabs{
+    background: #747474 !important;
+    color: #fff !important;
+  }

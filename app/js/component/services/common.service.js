@@ -19,7 +19,7 @@
           ////////////Methods////////////////
 
           function pageGo(pageName) {
-          $state.go('main.'+pageName);
+          $state.go('app.'+pageName);
           };
 
 

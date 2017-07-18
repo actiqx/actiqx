@@ -9,4 +9,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <engine name="android" spec="^6.2.3" />
+    <plugin name="cordova-plugin-datepicker" spec="git+https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git" />
 </widget>
