@@ -26,6 +26,15 @@
           }
         }
       })
+      .state('app.category', {
+        url: '/category',
+        views: {
+          'tab-home': {
+            templateUrl: 'js/modules/dashboard/categorydetails.html',
+            controller: 'CategoryCtrl as vm'
+          }
+        }
+      })
       .state('app.search', {
         url: '/search',
         views: {
@@ -39,7 +48,8 @@
         url: '/posttask',
         views: {
           'tab-posttask': {
-            templateUrl: 'js/modules/posttask/posttask.html'
+            templateUrl: 'js/modules/posttask/posttask.html',
+            controller: 'posttaskCtrl as vm'
 
           }
         }

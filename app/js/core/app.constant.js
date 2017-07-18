@@ -5,8 +5,8 @@
     .module('app')
     .constant('server', {
       host: 'http://localhost',
-      port:'2403',
-      dashboard:"/dashboard-details"
+      port:'5050',
+      dashboard:"/api/categories"
 
     })
 

@@ -1,4 +1,38 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="Post Task">
   <ion-content>
-PostTAsk
-  </ion-content></ion-view>
+    <div class="list">
+      <label class="item item-input item-floating-label">
+<span class="input-label">Task Title</span>
+ <input type="text" ng-model="vm.categories" placeholder="Task Title">
+    </label>
+
+      <label class="item item-input item-floating-label">
+    <span class="input-label">Task Description</span>
+    <input type="text" ng-model="vm.postTaskInfo.info" placeholder="Task Description">
+  </label>
+      <label class="item item-input item-floating-label">
+    <span class="input-label">Location</span>
+    <input type="text" placeholder="Location" vs-google-autocomplete
+
+                  ng-model="vm.locAddress.name"
+                  vs-place="vm.locAddress.place"
+                  vs-latitude="vm.locAddress.components.location.lat"
+                  vs-longitude="vm.locAddress.components.location.long"
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="form-control"
+                  placeholder="Enter address">
+  </label>
+      <label class="item item-input item-floating-label">
+    <!-- <span class="input-label">Date</span>
+{{vm.postTaskInfo.selectedDate}}
+    <button class="button button-positive button-block" ng-click="vm.openDatePicker()" >Date</button> -->
+  </label>
+    </div>
+
+         <button class="button button-large button-dark" ng-click="vm.doPostTask()">Post Task</button>
+
+</div>
+  </ion-content>
+</ion-view>

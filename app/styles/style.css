@@ -1,0 +1,71 @@
+
+
+.hero{
+    background-position: center;
+    background-size: cover;
+    border: 1px solid rgba(255,255,255,.8);
+
+    display: inline-block;
+
+    left: auto;
+    margin-bottom: 10px;
+    position: relative;
+    width: 88px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    color: #fff;
+    height: 200px;
+    position: relative;
+    text-align: center;
+     width: 100%;
+}
+
+
+.content{
+    background-position: center;
+    background-size: cover;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 50%;
+    display: inline-block;
+    height: 88px;
+    left: auto;
+    margin-bottom: 10px;
+    position: relative;
+    width: 88px;
+}
+.avatar{
+    background-position: center;
+    background-size: cover;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 50%;
+    display: inline-block;
+    height: 88px;
+    left: auto;
+    margin-bottom: 30px;
+    position: relative;
+    width: 88px;
+
+}
+.profile{
+    background: #37474F;
+height: 200px;
+}
+.profile .avatarimg {
+    background-position: center;
+    background-size: cover;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 50%;
+    display: inline-block;
+    height: 80px;
+    left: auto;
+
+    position: relative;
+    width: 80px;
+    margin-left: 35%;
+    margin-top:10%;
+}
+.profile .avatarname {
+ position: relative;
+    text-align: center;
+    color: #fff;
+}
+

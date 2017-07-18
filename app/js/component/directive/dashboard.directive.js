@@ -14,9 +14,21 @@
     var directive = {
       restrict: 'EA',
       scope: {
-        item: '='
+        item: '=',
+        id: '=',
+        ctrlfn: '&'
+      },
+      repalce: true,
+      link: function (scope, elm, attrs) {
+        scope.itemclick = function (id) {
+
+          scope.ctrlfn({ id: id });
+
+        }
+
       },
       templateUrl: 'js/component/directive/dashboardtemplate.html'
+
 
 
     };

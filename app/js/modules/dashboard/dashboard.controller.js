@@ -5,8 +5,8 @@
     .module('app.dashboard')
     .controller('dashboardCtrl', dashboardCtrl)
 
-  dashboardCtrl.$inject = ['$q','logger','dashboardService'];
-  function dashboardCtrl($q,logger,dashboardService) {
+  dashboardCtrl.$inject = ['$q', 'logger', 'dashboardService','commonService','sessionService','dataFactory'];
+  function dashboardCtrl($q, logger, dashboardService,commonService,sessionService,dataFactory) {
 
     var vm = this;
     vm.tileInfoList = [];
@@ -18,16 +18,33 @@
       });
     }
 
-   /*function navViewCtrl() {
-     commonService.pageGo('/dashboard');
-   }*/
+    /*function navViewCtrl() {
+      commonService.pageGo('/dashboard');
+    }*/
     function getDashboard() {
-     return dashboardService.getdashboarddata().then(function (data) {
+      return dashboardService.getdashboarddata().then(function (data) {
         vm.tileInfoList = angular.fromJson(data);
         return vm.tileInfoList;
       })
     };
 
+    vm.goToCategory=function(id) {
+
+      var selectedCategory = _.filter(vm.tileInfoList, function (c) {
+        return c._id == id;
+      })[0];
+      if (selectedCategory.childrens.length > 0) {
+        vm.subCategoryList = selectedCategory.childrens;
+        dataFactory.setsomething(vm.subCategoryList);
+        commonService.pageGo("category");
+        sessionService.showBack = true;
+      }
+
+    }
+vm.popAlert=function(id) {
+  alert("HI");
+
+}
   }
 
 }());

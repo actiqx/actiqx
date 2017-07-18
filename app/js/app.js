@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('app', [
-      'ionic','blocks.logger','blocks.exception', 'app.layout','app.directive','app.dashboard','app.service'
+      'ionic','ionic-material','ngCordova','ionic-datepicker','blocks.logger','blocks.exception', 'app.layout','app.directive','app.dashboard','app.service','app.factory'
 
 
     ]);

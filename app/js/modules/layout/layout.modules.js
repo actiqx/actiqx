@@ -3,7 +3,7 @@
 
     angular
         .module('app.layout', [
-'app.dashboard'
+'app.dashboard','app.posttask'
         ]);
 
 }());
