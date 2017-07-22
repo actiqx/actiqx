@@ -1,38 +1,38 @@
 <ion-view view-title="Post Task">
   <ion-content>
-    <div class="list">
-      <label class="item item-input item-floating-label">
-<span class="input-label">Task Title</span>
- <input type="text" ng-model="vm.categories" placeholder="Task Title">
-    </label>
+    <div class="row">
+      <form class="col s12">
 
-      <label class="item item-input item-floating-label">
-    <span class="input-label">Task Description</span>
-    <input type="text" ng-model="vm.postTaskInfo.info" placeholder="Task Description">
-  </label>
-      <label class="item item-input item-floating-label">
-    <span class="input-label">Location</span>
-    <input type="text" placeholder="Location" vs-google-autocomplete
 
-                  ng-model="vm.locAddress.name"
-                  vs-place="vm.locAddress.place"
-                  vs-latitude="vm.locAddress.components.location.lat"
-                  vs-longitude="vm.locAddress.components.location.long"
-                  type="text"
-                  name="address"
-                  id="address"
-                  class="form-control"
-                  placeholder="Enter address">
-  </label>
-      <label class="item item-input item-floating-label">
-    <!-- <span class="input-label">Date</span>
-{{vm.postTaskInfo.selectedDate}}
-    <button class="button button-positive button-block" ng-click="vm.openDatePicker()" >Date</button> -->
-  </label>
+        <auto-complete model="vm.postTaskInfo.Title" func="vm.getCategories" property="title" label="Task Title"></auto-complete>
+
+
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="task_desc" class="materialize-textarea"></textarea>
+
+            <label for="task_desc">Task Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="location" vs-google-autocomplete ng-model="posttaskvm.locAddress.name" vs-place="posttaskvm.locAddress.place" vs-latitude="posttaskvm.locAddress.components.location.lat"
+              vs-longitude="posttaskvm.locAddress.components.location.long" type="text" name="address" id="address" class="form-control"
+              >
+               <label for="location">Location</label>
+
+          </div>
+        </div>
+
+
+      </form>
     </div>
 
-         <button class="button button-large button-dark" ng-click="vm.doPostTask()">Post Task</button>
+    </div>
+    </div>
 
-</div>
+    <button class="button button-large button-dark" ng-click="vm.doPostTask()">Post Task</button>
+
+    </div>
   </ion-content>
 </ion-view>
