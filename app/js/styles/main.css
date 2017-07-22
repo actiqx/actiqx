@@ -12,3 +12,10 @@
     background: #747474 !important;
     color: #fff !important;
   }
+
+   .test-open-class {
+            display: block;
+        }
+        .test-close-class {
+            display: none;
+        }

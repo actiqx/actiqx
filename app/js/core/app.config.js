@@ -81,6 +81,16 @@
           }
         }
       })
+       .state('app.profile', {
+        url: '/profile',
+        views: {
+          'tab-home': {
+            templateUrl: 'js/modules/profile/profile.html',
+            controller: 'profileCtrl as vm'
+
+          }
+        }
+      })
       .state('app.password', {
         url: '/login',
         views: {

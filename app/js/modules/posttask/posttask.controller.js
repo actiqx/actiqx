@@ -5,8 +5,8 @@
     .module('app.posttask')
     .controller('posttaskCtrl', posttaskCtrl)
 
-  posttaskCtrl.$inject = ['taskService', 'dataFactory'];
-  function posttaskCtrl(taskService, dataFactory) {
+  posttaskCtrl.$inject = ['taskService', 'dataFactory', 'dashboardService'];
+  function posttaskCtrl(taskService, dataFactory, dashboardService) {
     var vm = this;
     vm.postTaskInfo = {};
     vm.postTaskInfo.title = "";
@@ -31,6 +31,20 @@
     function init() {
     }
 
+
+ vm.getCatgList = getCatgList;
+vm.categoryName="";
+    function getCatgList() {
+      return dashboardService.getdashboarddata().then(function (data) {
+        vm.tileInfoList = angular.fromJson(data);
+        return vm.tileInfoList;
+      }) 
+    }
+
+
+
+
+    
     vm.getSearchMatches = function (text) {
       text = text.toLowerCase();
       var ret = vm.categories.filter(function (d) {
@@ -38,6 +52,9 @@
       });
       return ret;
     }
+    
+    
+
     function querySearch(query) {
       var results = query ? vm.categories.filter(createFilterFor(query)) : vm.categories;
       var deferred = $q.defer();

@@ -3,9 +3,7 @@
 
     angular.module('app', [
 
-      'ionic','ionic-material','ngCordova','ionic-datepicker','blocks.logger','blocks.exception', 'app.layout','app.directive','app.dashboard','app.service','app.factory'
-
-
+      'ionic','ionic-material','angularMaterializeAutoComplete','ngCordova','ionic-datepicker','blocks.logger','blocks.exception', 'app.layout','app.directive','app.dashboard','app.service','app.factory','app.profile'
 
     ]);
 })();
