@@ -5,8 +5,8 @@
     .module('app.posttask')
     .controller('posttaskCtrl', posttaskCtrl)
 
-  posttaskCtrl.$inject = ['taskService', 'dataFactory'];
-  function posttaskCtrl(taskService, dataFactory) {
+  posttaskCtrl.$inject = ['taskService', 'dataFactory','dashboardService','$http'];
+  function posttaskCtrl(taskService, dataFactory,dashboardService,$http) {
     var vm = this;
     vm.postTaskInfo = {};
     vm.postTaskInfo.title = "";
@@ -19,8 +19,9 @@
     // list of `state` value/display objects
     vm.categories = loadAllCategory();
     vm.selectedTaskCategory = null;
+    vm.getLocation = getLocation
     vm.searchText = null;
-    vm.querySearch = querySearch;
+
 
     /*
    * Search for states... use $timeout to simulate
@@ -31,19 +32,28 @@
     function init() {
     }
 
-    vm.getSearchMatches = function (text) {
-      text = text.toLowerCase();
-      var ret = vm.categories.filter(function (d) {
-        return d.value.startsWith(text);
-      });
-      return ret;
+
+vm.getCategories= function(){
+ return dashboardService.getdashboarddata().then(function (data) {
+        vm.tileInfoList = angular.fromJson(data);
+        return vm.tileInfoList;
+      })
+}
+
+
+    function getLocation(search) {
+
+      return $http.get('https://maps.googleapis.com/maps/api/js', {
+        params: {
+          libraries: search,
+          key:"AIzaSyAlR-o3BLBeZi2zuwsTATa3KzrOUSLQ2pg"
+        }
+      }).then(function (response) {
+        console.log('response {}', response);
+        return response.data.results
+      })
     }
-    function querySearch(query) {
-      var results = query ? vm.categories.filter(createFilterFor(query)) : vm.categories;
-      var deferred = $q.defer();
-      $timeout(function () { deferred.resolve(results); }, Math.random() * 1000, false);
-      return deferred.promise;
-    }
+
     function loadAllCategory() {
       var selectedCatego = dataFactory.getsomething();
       if (!selectedCatego) {
@@ -61,12 +71,7 @@
       }
     }
 
-    function createFilterFor(query) {
-      var lowercaseQuery = angular.lowercase(query);
-      return function filterFn(cate) {
-        return (cate.value.indexOf(lowercaseQuery) === 0);
-      };
-    }
+
 
     vm.locAddress = {
       name: '',
