@@ -14,4 +14,5 @@
     <plugin name="phonegap-plugin-push" spec="^1.10.5">
         <variable name="SENDER_ID" value="125954626318" />
     </plugin>
+    <plugin name="cordova-plugin-x-toast" spec="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" />
 </widget>
