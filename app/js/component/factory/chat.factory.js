@@ -7,9 +7,9 @@
 
     chatFactory.$inject = ['socketFactory'];
 
-    function chatFactory($socketFactory1) {
+    function chatFactory(socketFactory) {
         var myIoSocket = io.connect('http://chat.socket.io');
-        mySocket = socketFactory({
+      var  mySocket = socketFactory({
     	ioSocket: myIoSocket
   	});
   	

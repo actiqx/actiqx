@@ -4,9 +4,9 @@
   angular
     .module('app')
     .constant('server', {
-      host: 'http://localhost',
-      port:'5050',
-      dashboard:"/api/categories"
+      host: 'http://test1234.us-east-1.elasticbeanstalk.com/',
+      dashboard:"/api/categories",
+      posttask:"/api/posttask"
 
     })
 

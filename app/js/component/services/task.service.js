@@ -14,7 +14,7 @@ var servicecalls = {
     return servicecalls;
 function posttaskdata(requestData,requestHeader){
 
-   return $http.post(`${server.host}:${server.port}${server.dashboard}`,requestData,requestHeader)
+   return $http.post(`${server.host}${server.posttask}`,requestData,requestHeader)
         .then(success)
         .catch(fail);
 
