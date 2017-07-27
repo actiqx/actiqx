@@ -150,12 +150,12 @@ module.exports = function (grunt) {
     },
 
     // Automatically inject Bower components into the app
-    // wiredep: {
-    //   app: {
-    //     src: ['<%= actiqx.app %>/index.html'],
-    //     ignorePath:  /\.\.\//
-    //   }
-    // },
+    wiredep: {
+      app: {
+        src: ['<%= actiqx.app %>/index.html'],
+        ignorePath:  /\.\.\//
+      }
+    },
 
     
 

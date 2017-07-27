@@ -5,15 +5,16 @@
         .module('app.chat')
         .controller('chatCtrl', chatCtrl)
 
-    chatCtrl.$inject = ['chatFactory'];
+    chatCtrl.$inject = ['chatFactory','$timeout','$sanitize','$ionicScrollDelegate'];
 
-    function chatCtrl(chatFactory) {
+    function chatCtrl(chatFactory,$timeout,$sanitize,$ionicScrollDelegate) {
         /* jshint validthis:true */
         var vm = this;
-        var self=this;
+       
   	var typing = false;
   	var lastTypingTime;
-  	var TYPING_TIMER_LENGTH = 400;
+      var TYPING_TIMER_LENGTH = 400;
+     vm.name= localStorage.getItem('username');
 //Add colors
   	var COLORS = [
 	    '#e21400', '#91580f', '#f8a700', '#f78b00',
@@ -22,22 +23,22 @@
 	  ];
 
 	 //initializing messages array
-    self.messages=[];
+    vm.messages=[];
     chatFactory.on('connect',function(){
-        connected =true;
+        vm.connected =true;
      //Add user
-  	  socket.emit('add user', $stateParams.nickname);
+  	  chatFactory.emit('add user', vm.name);
 
   	  // On login display welcome message
-  	  socket.on('login', function (data) {
+  	  chatFactory.on('login', function (data) {
 	    //Set the value of connected flag
-	    self.connected = true
-	    self.number_message= message_string(data.numUsers)
+	    vm.connected = true
+	    vm.number_message= message_string(data.numUsers)
 	  	
 	  });
 
 	  // Whenever the server emits 'new message', update the chat body
-	  socket.on('new message', function (data) {
+	  chatFactory.on('new message', function (data) {
 	  	if(data.message&&data.username)
 	  	{
 	   		addMessageToList(data.username,true,data.message)
@@ -45,38 +46,38 @@
 	  });
 
 	  // Whenever the server emits 'user joined', log it in the chat body
-	  socket.on('user joined', function (data) {
+	  chatFactory.on('user joined', function (data) {
 	  	addMessageToList("",false,data.username + " joined")
 	  	addMessageToList("",false,message_string(data.numUsers)) 
 	  });
 
 	  // Whenever the server emits 'user left', log it in the chat body
-	  socket.on('user left', function (data) {
+	  chatFactory.on('user left', function (data) {
 	    addMessageToList("",false,data.username+" left")
 	    addMessageToList("",false,message_string(data.numUsers))
 	  });
 
 	  //Whenever the server emits 'typing', show the typing message
-	  socket.on('typing', function (data) {
+	  chatFactory.on('typing', function (data) {
 	    addChatTyping(data);
 	  });
 
 	  // Whenever the server emits 'stop typing', kill the typing message
-	  socket.on('stop typing', function (data) {
+	  chatFactory.on('stop typing', function (data) {
 	    removeChatTyping(data.username);
 	  });	
 
     })
     //function called when user hits the send button
-  	self.sendMessage=function(){
-  		socket.emit('new message', self.message)
-  		addMessageToList($stateParams.nickname,true,self.message)
-  		socket.emit('stop typing');
-  		self.message = ""
+  	vm.sendMessage=function(){
+  		chatFactory.emit('new message', vm.message)
+  		addMessageToList(vm.name,true,vm.message)
+  		chatFactory.emit('stop typing');
+  		vm.message = ""
   	}
 
   	//function called on Input Change
-  	self.updateTyping=function(){
+  	vm.updateTyping=function(){
   		sendUpdateTyping()
   	}
 
@@ -85,7 +86,7 @@
   		username = $sanitize(username)
   		removeChatTyping(username)
   		var color = style_type ? getUsernameColor(username) : null
-  		self.messages.push({content:$sanitize(message),style:style_type,username:username,color:color})
+  		vm.messages.push({content:$sanitize(message),style:style_type,username:username,color:color})
   		$ionicScrollDelegate.scrollBottom();
   	}
 
@@ -103,10 +104,10 @@
 
   	// Updates the typing event
   	function sendUpdateTyping(){
-  		if(connected){
+  		if(vm.connected){
   			if (!typing) {
 		        typing = true;
-		        socket.emit('typing');
+		        chatFactory.emit('typing');
 		    }
   		}
   		lastTypingTime = (new Date()).getTime();
@@ -114,7 +115,7 @@
 	        var typingTimer = (new Date()).getTime();
 	        var timeDiff = typingTimer - lastTypingTime;
 	        if (timeDiff >= TYPING_TIMER_LENGTH && typing) {
-	          socket.emit('stop typing');
+	          chatFactory.emit('stop typing');
 	          typing = false;
 	        }
       	}, TYPING_TIMER_LENGTH)
@@ -127,7 +128,7 @@
 
 	// Removes the visual chat typing message
 	function removeChatTyping (username) {
-	  	self.messages = self.messages.filter(function(element){return element.username != username || element.content != " is typing"})
+	  	vm.messages = vm.messages.filter(function(element){return element.username != username || element.content != " is typing"})
 	}
 
   	// Return message string depending on the number of users

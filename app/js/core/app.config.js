@@ -86,7 +86,8 @@
         url: '/login',
         views: {
           'tab-home': {
-            templateUrl: 'js/modules/login/login.html'
+            templateUrl: 'js/modules/login/login.html',
+            controller: 'loginCtrl as vm'
 
           }
         }
