@@ -19,3 +19,8 @@
         .test-close-class {
             display: none;
         }
+.tabs{
+position: absolute !important;
+}
+
+

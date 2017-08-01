@@ -17,6 +17,35 @@
         controller: 'layoutCtrl as vm'
 
       })
+        .state('app.login', {
+        url: '/login',
+        views: {
+          'tab-home': {
+            templateUrl: 'js/modules/login/login.html',
+            controller: 'loginCtrl as vm'
+
+          }
+        }
+      })
+       .state('app.signup', {
+        url: '/signup',
+        views: {
+          'tab-home': {
+            templateUrl: 'js/modules/signup/signup.html',
+            controller: 'signupCtrl as vm'
+
+          }
+        }
+      })
+       .state('app.changepassword', {
+        url: '/changepassword',
+        views: {
+          'tab-home': {
+            templateUrl: 'js/modules/changepassword/changepassword.html',
+            controller: 'changepasswordCtrl as vm'
+          }
+        }
+      })
       .state('app.dashboard', {
         url: '/dashboard',
         views: {
@@ -99,8 +128,7 @@
 
           }
         }
-      })
-      ;
+      });
 
 
 

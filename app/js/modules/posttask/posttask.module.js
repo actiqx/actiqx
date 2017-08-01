@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.posttask', ['vsGoogleAutocomplete'
+        .module('app.posttask', ['app.directive','vsGoogleAutocomplete'
 
         ]);
 

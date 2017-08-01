@@ -9,7 +9,9 @@
       dashboard:"/api/categories"
 
     })
-
+  .constant('ACTIQXAPP', {
+      ServiceUrl: 'http://test1234.us-east-1.elasticbeanstalk.com'    
+  })
     .constant('langMessage',{
       EnterFirstName:"Enter First Name",
       EnterLastName:"Enter Last Name",
@@ -27,5 +29,12 @@
       EnterNewPassword:"Enter New Password",
       ReEnterNewPassword:"Re-enter New Password",
       PasswordChangedSuccessfully:"Password Changed Successfully"
+    })
+
+    .constant('ACTIQX_SERVICE_URI', {
+        LoginUserInfoURL: '/api/users/me',
+        LoginURL:'/auth/local',
+        SignInURL:'/api/users'
+
     });
 })();
