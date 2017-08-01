@@ -87,7 +87,8 @@
         url: '/chat',
         views: {
           'tab-chat': {
-            templateUrl: 'js/modules/chat/chat.html'
+            templateUrl: 'js/modules/chat/chat.html',
+            controller: 'chatCtrl as vm'
 
           }
         }
@@ -124,7 +125,8 @@
         url: '/login',
         views: {
           'tab-home': {
-            templateUrl: 'js/modules/login/login.html'
+            templateUrl: 'js/modules/login/login.html',
+            controller: 'loginCtrl as vm'
 
           }
         }

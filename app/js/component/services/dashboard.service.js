@@ -14,7 +14,7 @@
 
     function getdashboarddata() {
 
-     return $http.get(`${server.host}:${server.port}${server.dashboard}`)
+     return $http.get(`${server.host}${server.dashboard}`)
         .then(success)
         .catch(fail);
 
