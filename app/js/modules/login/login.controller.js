@@ -11,7 +11,7 @@
         vm.Name="hello";
         vm.user = {
           uname: '',
-          password: '',
+          password: ''
 
         };
         vm.LoginCall=function(){
