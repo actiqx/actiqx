@@ -17,7 +17,7 @@
         vm.LoginCall=function(){
           var requestData={
           "username": vm.user.uname,
-          "password": vm.user.password,
+          "password": vm.user.password
         };
           
       ActiqxApiFactory.doLogin(ACTIQX_SERVICE_URI.LoginURL, requestData).then(function (data) {
