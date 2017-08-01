@@ -8,9 +8,9 @@
         .module('app.factory')
         .factory('ActiqxApiFactory', ActiqxApiFactory);
 
-    ActiqxApiFactory.$inject = ['$http','$q', 'sessionService', 'ACTIQXAPP', 'ACTIQX_SERVICE_URI'];
+    ActiqxApiFactory.$inject = ['$http','$q', 'sessionService', 'ACTIQXAPP', 'server'];
         
-    function ActiqxApiFactory ($http, $q, sessionService, ACTIQXAPP, ACTIQX_SERVICE_URI) {
+    function ActiqxApiFactory ($http, $q, sessionService, ACTIQXAPP, server) {
 
         ////////////////////////////////////////////////////
         //////////Post Service Call////////////////////

@@ -4,9 +4,12 @@
   angular
     .module('app')
     .constant('server', {
-      host: 'http://test1234.us-east-1.elasticbeanstalk.com/',
+      host: 'http://test1234.us-east-1.elasticbeanstalk.com',
       dashboard:"/api/categories",
-      posttask:"/api/posttask"
+      posttask:"/api/posttask",
+      LoginUserInfoURL: '/api/users/me',
+      LoginURL:'/auth/local',
+      SignInURL:'/api/users'
 
     })
   .constant('ACTIQXAPP', {
@@ -31,7 +34,7 @@
       PasswordChangedSuccessfully:"Password Changed Successfully"
     })
 
-    .constant('ACTIQX_SERVICE_URI', {
+    .constant('server', {
         LoginUserInfoURL: '/api/users/me',
         LoginURL:'/auth/local',
         SignInURL:'/api/users'
