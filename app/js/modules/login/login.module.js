@@ -1,12 +1,9 @@
-(function () {
+(function(){
     'use strict';
 
-    angular.module('app.login', [
-        // Angular modules
+    angular
+        .module('app.login', [
+       
+        ]);
 
-        // Custom modules
-
-        // 3rd Party Modules
-
-    ]);
-})();
+}());

@@ -9,6 +9,7 @@
   function sessionService($q, $state) {
 
     var sessionData = {};
+    sessionData.UserID="";
     sessionData.UserData = null;
     sessionData.UnReadNotificationCount = 4;
     sessionData.showBack = false;

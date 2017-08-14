@@ -21,17 +21,25 @@
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css" />
-  <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css" />
   <link rel="stylesheet" href="bower_components/waves/dist/waves.min.css" />
   <link rel="stylesheet" href="bower_components/ionic-material/dist/ionic.material.css" />
   <link rel="stylesheet" href="bower_components/ionic-material/dist/ionic.material.min.css" />
-  <link rel="stylesheet" href="bower_components/materialize-clockpicker/dist/css/materialize.clockpicker.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
-   <!-- ionic/angularjs js -->
+
+  <body ng-app="app">
+
+    <ion-nav-view> </ion-nav-view>
+  </body>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="styles/ionic.app.css" rel="stylesheet">
+    -->
+
+  <!-- ionic/angularjs js -->
   <!-- build:js scripts/vendor.js -->
- 
+  <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -40,7 +48,6 @@
   <script src="bower_components/ionic/release/js/ionic.js"></script>
   <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
   <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
-  <script src="bower_components/materialize/bin/materialize.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/waves/dist/waves.min.js"></script>
   <script src="bower_components/ionic-material/dist/ionic.material.js"></script>
@@ -48,18 +55,13 @@
   <script src="bower_components/vsGoogleAutocomplete/dist/vs-google-autocomplete.js"></script>
   <script src="bower_components/vsGoogleAutocomplete/dist/vs-autocomplete-validator.js"></script>
   <script src="bower_components/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
-  <script src="bower_components/angular-materializecss-autocomplete/angular-materializecss-autocomplete.js"></script>
-  <script src="bower_components//materialize-clockpicker/dist/js/materialize.clockpicker.js"></script>
   <!-- endbower -->
-   <script src="bower_components/socket.io-client/dist/socket.io.js"></script>
-  <script src="bower_components/angular-socket-io/socket.js"></script>
- 
-
   <!-- endbuild -->
+
   <!-- cordova script (this will be a 404 during development) -->
 
+<script src="bower_components/ngCordova/dist/ng-cordova.min.js"></script>
   <script src="cordova.js"></script>
-  <script src="bower_components/ngCordova/dist/ng-cordova.min.js"></script>
 
   <!-- your app's js -->
   <!-- build:js scripts/scripts.js -->
@@ -76,26 +78,14 @@
 <script src="js/component/services/service.module.js"></script>
   <script src="js/modules/layout/layout.modules.js"></script>
   <script src="js/modules/layout/layout.controller.js"></script>
-   <script src="js/component/factory/actiqxapi.factory.js"></script>
 <script src="js/component/factory/dataservice.factory.js"></script>
-<script src="js/component/factory/chat.factory.js"></script>
 <script src="js/component/services/session.service.js"></script>
 <script src="js/component/services/common.service.js"></script>
-<script src="js/component/services/api.service.js"></script>
-<script src="js/modules/signup/signup.module.js"></script>
-  <script src="js/modules/signup/signup.controller.js"></script>
-  <script src="js/modules/login/login.module.js"></script>
-  <script src="js/modules/login/login.controller.js"></script>
 <script src="js/component/services/dashboard.service.js"></script>
 <script src="js/component/services/task.service.js"></script>
   <script src="js/modules/dashboard/dashboard.module.js"></script>
   <script src="js/modules/posttask/posttask.module.js"></script>
   <script src="js/modules/posttask/posttask.controller.js"></script>
-  <script src="js/modules/chat/chat.module.js"></script>
-  <script src="js/modules/chat/chat.controller.js"></script>
-  <script src="js/modules/login/login.module.js"></script>
-  <script src="js/modules/login/login.controller.js"></script>
-
 
 
 
@@ -104,25 +94,11 @@
    <script src="js/modules/dashboard/categorydetails.controller.js"></script>
   <script src="js/component/directive/directive.module.js"></script>
   <script src="js/component/directive/dashboard.directive.js"></script>
-  <script src="js/component/directive/autocomplete.directive.js"></script>
-  <script src="js/component/directive/autocompleteview.directive.js"></script>
-  <script src="js/component/directive/timepicker.directive.js"></script>
 
- <script src="js/modules/profile/profile.module.js"></script>
-  <script src="js/modules/profile/profile.controller.js"></script>
-    <script src="js/modules/changepassword/changepassword.module.js"></script>
-  <script src="js/modules/changepassword/changepassword.controller.js"></script>
 
   <script src="js/configuration/configuration.js"></script>
   <!-- endbuild -->
 </head>
-  <body ng-app="app">
 
-    <ion-nav-view> </ion-nav-view>
-  </body>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="styles/ionic.app.css" rel="stylesheet">
-    -->
 
 </html>
