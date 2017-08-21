@@ -1,4 +1,11 @@
 
+.bar-app {
+    background: #E91E63 !important;
+    color: #fff;
+}
+  .bar .title {
+  color: #fff !important;
+  }
 .has-header{
   top:20px !important;
 }

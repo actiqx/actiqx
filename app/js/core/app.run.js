@@ -12,7 +12,7 @@
     $ionicPlatform.ready(function () {
       var options = {
         android: {
-          senderID: "125954626318"
+          senderID: "715267639950"
         },
         ios: {
           alert: "true",
