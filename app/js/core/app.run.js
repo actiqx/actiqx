@@ -46,6 +46,7 @@
         // register to get registrationId
         $cordovaPushV5.register().then(function (registrationId) {
           // save `registrationId` somewhere;
+          alert(registrationId);
           localStorage.myPush = registrationId;
         },
           function (err) {

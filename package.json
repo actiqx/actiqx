@@ -7,6 +7,7 @@
     "cordova-android": "^6.2.3",
     "cordova-plugin-datepicker": "git+https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git",
     "cordova-plugin-x-toast": "git+https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+    "ionic-plugin-keyboard": "^2.2.1",
     "ng-material-datetimepicker": "^1.6.6",
     "phonegap-plugin-push": "^1.10.5"
   },
@@ -83,7 +84,8 @@
     "org.apache.cordova.inappbrowser",
     "https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git",
     "phonegap-plugin-push",
-    "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git"
+    "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+    "ionic-plugin-keyboard"
   ],
   "cordova": {
     "plugins": {
@@ -91,7 +93,8 @@
       "phonegap-plugin-push": {
         "SENDER_ID": "125954626318"
       },
-      "cordova-plugin-x-toast": {}
+      "cordova-plugin-x-toast": {},
+      "ionic-plugin-keyboard": {}
     },
     "platforms": [
       "android"

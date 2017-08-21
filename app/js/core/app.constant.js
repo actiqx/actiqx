@@ -34,7 +34,7 @@
       PasswordChangedSuccessfully:"Password Changed Successfully"
     })
 
-    .constant('server', {
+    .constant('ACTIQX_SERVICE_URI', {
         LoginUserInfoURL: '/api/users/me',
         LoginURL:'/auth/local',
         SignInURL:'/api/users'

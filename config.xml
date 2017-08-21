@@ -15,4 +15,5 @@
         <variable name="SENDER_ID" value="125954626318" />
     </plugin>
     <plugin name="cordova-plugin-x-toast" spec="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" />
+    <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
 </widget>
